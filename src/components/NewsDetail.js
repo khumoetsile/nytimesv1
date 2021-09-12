@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { NewsContext } from './NewsContext';
-import { Link } from 'react-router-dom';
+import { BrowserRouter,Link } from 'react-router-dom';
 
 function NewsDetail({ match }) {
   const [newsData, setNewsData] = useContext(NewsContext);
@@ -23,9 +23,11 @@ function NewsDetail({ match }) {
         <button>
           <a href={newsItem.url}>Read the full article</a>
         </button>
+        <BrowserRouter>
         <Link to="/">
           <button>Back</button>
         </Link>
+        </BrowserRouter>
       </div>
     </div>
   );

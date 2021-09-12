@@ -6,7 +6,10 @@ import { NewsContext } from './NewsContext';
 function NewsList() {
   const [newsData, setNewsData] = useContext(NewsContext);
 
-  const newsItemComponent = newsData.map(item => {
+  let newsItemComponent =[]
+
+ try{
+  newsItemComponent = newsData.map(item => {
     return (
       <div>
         <NewsItem
@@ -18,7 +21,9 @@ function NewsList() {
       </div>
     );
   });
-
+ } catch(err) {
+   console.log(err)
+ }
   return <div>{newsItemComponent}</div>;
 }
 
