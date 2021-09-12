@@ -15,7 +15,7 @@ A simple responsive web app with ReactJs to hit the NY Times Most Popular Articl
 
 <b>HOW TO RUN TESTS</b>
 
-1. mvn test
+1. npm test
 
 <b>CODE COVERAGE</b>
 
