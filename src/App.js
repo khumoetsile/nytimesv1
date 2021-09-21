@@ -9,6 +9,7 @@ function App() {
   return (
     <NewsProvider>
       <div>
+        
         <Router>
           <Switch>
             <Route path="/" exact component={NewsList} />

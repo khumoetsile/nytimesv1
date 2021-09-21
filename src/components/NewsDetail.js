@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { NewsContext } from './NewsContext';
-import { BrowserRouter,Link } from 'react-router-dom';
+import { BrowserRouter,Link,useHistory } from 'react-router-dom';
 
 function NewsDetail({ match }) {
   const [newsData, setNewsData] = useContext(NewsContext);
   const [newsItem, setNewsItem] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
     newsData.map(item => {
@@ -24,9 +25,7 @@ function NewsDetail({ match }) {
           <a href={newsItem.url}>Read the full article</a>
         </button>
         <BrowserRouter>
-        <Link to="/">
-          <button>Back</button>
-        </Link>
+          <button onClick={()=> history.goBack()} >Back</button>
         </BrowserRouter>
       </div>
     </div>
